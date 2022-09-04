@@ -9,11 +9,12 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
+import java.util.Objects;
 
 
 public class OnReady extends ListenerAdapter {
     @Override
     public void onReady(@NotNull ReadyEvent event) {
-        NullcordDiscordBungeeManager.channel = event.getJDA().getGuildById(Config.guild()).getTextChannelById(Long.parseLong(Config.getChannelID()));
+        NullcordDiscordBungeeManager.channel = Objects.requireNonNull(event.getJDA().getGuildById(Config.guild())).getTextChannelById(Long.parseLong(Config.getChannelID()));
     }
 }
