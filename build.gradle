@@ -8,8 +8,8 @@ version '1.0'
 
 shadowJar {
     archiveFileName = "NullcordX-DiscordAddon.jar"
-    //relocate 'org.simpleyaml', 'es.angelillo15.libs.simpleyaml'
-    //relocate 'org.yaml.snakeyaml', 'es.angelillo15.libs.snakeyaml'
+    relocate 'org.simpleyaml', 'es.angelillo15.libs.simpleyaml'
+    relocate 'org.yaml.snakeyaml', 'es.angelillo15.libs.snakeyaml'
 }
 
 repositories {
