@@ -1,0 +1,54 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '5.2.0'
+}
+
+group 'es.angelillo15'
+version '1.0'
+
+shadowJar {
+    archiveFileName = "NullcordX-DiscordAddon.jar"
+    //relocate 'org.simpleyaml', 'es.angelillo15.libs.simpleyaml'
+    //relocate 'org.yaml.snakeyaml', 'es.angelillo15.libs.snakeyaml'
+}
+
+repositories {
+    maven { url uri('https://jitpack.io') }
+
+    mavenCentral()
+    maven {
+        url "https://m2.dv8tion.net/releases"
+    }
+
+    maven {
+        url 'https://oss.sonatype.org/content/repositories/snapshots'
+    }
+
+    flatDir {
+        dirs 'libs'
+    }
+
+
+}
+
+dependencies {
+    implementation 'me.carleslc.Simple-YAML:Simple-Yaml:1.8.1'
+    implementation 'org.yaml:snakeyaml:1.30'
+    implementation 'net.dv8tion:JDA:5.0.0-alpha.18'
+    compileOnly 'net.md-5:bungeecord-api:1.19-R0.1-SNAPSHOT'
+    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
+
+}
+
+processResources {
+    def props = [version: version]
+    inputs.properties props
+    filteringCharset 'UTF-8'
+    filesMatching('bungee.yml') {
+        expand props
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}

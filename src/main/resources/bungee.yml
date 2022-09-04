@@ -1,0 +1,4 @@
+name: NullcordXDiscord
+main: es.angelillo15.nullcord.discord.NullcordDiscord
+version: ${version}
+author: Angelillo15

@@ -1,0 +1,2 @@
+# Nullcord as a library
+To add the library you have to download the latest version from the [releases page](https://polymart.org/resource/nullcordx-extreme-antibot.1476#!) and place it here as the name of NullcordX.jar

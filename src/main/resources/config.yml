@@ -1,0 +1,28 @@
+# Tun run this plugin you need NullcordX
+#
+# This is the config file of NullcordX Discord addon
+# where you can modify and customize the plugin.
+#
+Config:
+  # Your discord bot token
+  token: "your-discord-bot-token"
+  # Server guild
+  guild: "your-discord-guild-id"
+  # The status of the bot
+  onlineStatus: "ONLINE"
+  # The activity of the bot
+  onlineActivity: "WATCHING"
+  # The message that will be displayed when the bot is online
+  onlineActivityText: "Protected by NullcordX"
+  # Channel ID where the bot will advert of the attacks
+  channelID: "your-channel-id"
+Embed:
+  color: "#1749E6"
+  onBotAttack:
+    tittle: "Bot attack!"
+    description: "A bot attack has been detected in the server"
+    footer: "NullcordX"
+  onPingAttack:
+    tittle: "Ping attack!"
+    description: "A ping attack has been detected in the server"
+    footer: "Discord nullcord addon"
