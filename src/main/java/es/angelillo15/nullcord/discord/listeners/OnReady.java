@@ -1,10 +1,14 @@
 package es.angelillo15.nullcord.discord.listeners;
 
+import es.angelillo15.nullcord.discord.NullcordDiscord;
 import es.angelillo15.nullcord.discord.NullcordDiscordBungeeManager;
 import es.angelillo15.nullcord.discord.config.Config;
+import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.ReadyEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.jetbrains.annotations.NotNull;
+
+import java.awt.*;
 
 
 public class OnReady extends ListenerAdapter {

@@ -8,7 +8,7 @@ import java.awt.Color;
 public class Utils {
     public static EmbedBuilder getDefaultEmbed(String title, String description, String footer){
         return new EmbedBuilder()
-                .setColor(Color.getColor(Config.defaultColor()))
+                .setColor(Color.decode(Config.defaultColor()))
                 .setDescription(description)
                 .setTitle(title)
                 .setFooter(footer);
