@@ -1,5 +1,6 @@
 package es.angelillo15.nullcord.discord;
 
+import es.angelillo15.nullcord.discord.cmd.MainCMD;
 import es.angelillo15.nullcord.discord.config.Config;
 import es.angelillo15.nullcord.discord.config.ConfigLoader;
 import es.angelillo15.nullcord.discord.listeners.AttackDetected;
@@ -28,6 +29,7 @@ public class NullcordDiscordBungeeManager extends Plugin {
     public void registerEvent(){
         PluginManager pluginManager = getProxy().getPluginManager();
         pluginManager.registerListener(this , new AttackDetected());
+        pluginManager.registerCommand(this, new MainCMD());
 
     }
 

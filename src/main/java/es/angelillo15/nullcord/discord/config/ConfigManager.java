@@ -50,6 +50,7 @@ public class ConfigManager {
         try {
             if (!configFile.exists()){
                 Files.copy(Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream(originalFileName)), configFile.toPath());
+
             }
         } catch (IOException e) {
             e.printStackTrace();
