@@ -3,6 +3,7 @@ package es.angelillo15.nullcord.discord.cmd;
 import es.angelillo15.nullcord.discord.NullcordDiscordBungeeManager;
 import es.angelillo15.nullcord.discord.config.ConfigLoader;
 import net.md_5.bungee.api.CommandSender;
+import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Command;
 
@@ -19,14 +20,14 @@ public class MainCMD extends Command {
         }else {
             ProxiedPlayer player = (ProxiedPlayer) commandSender;
             if(args.length == 0) {
-                player.sendMessage("§cUsage: /ndiscord reload");
+                player.sendMessage(new TextComponent("§cUsage: /ndiscord reload"));
             }else {
                 if(args[0].equalsIgnoreCase("reload")) {
                     if(!(player.hasPermission("ndiscord.reload"))) {
-                        player.sendMessage("§cYou don't have permission to do that!");
+                        player.sendMessage(new TextComponent("§cYou don't have permission to do that!"));
                         return;
                     }
-                    player.sendMessage("§aReloading the plugin...");
+                    player.sendMessage(new TextComponent("§aReloading the plugin..."));
                     ConfigLoader.getConfig().registerConfig();
                 }
             }
