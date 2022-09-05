@@ -11,19 +11,20 @@ public class MainCMD extends Command {
     public MainCMD() {
         super("ndiscord");
     }
+
     @Override
     public void execute(CommandSender commandSender, String[] args) {
-        if(!(commandSender instanceof ProxiedPlayer)){
+        if (!(commandSender instanceof ProxiedPlayer)) {
             NullcordDiscordBungeeManager.getPluginLogger().info("Reloading the plugin...");
             ConfigLoader.getConfig().registerConfig();
             NullcordDiscordBungeeManager.getPluginLogger().info("Plugin reloaded!");
-        }else {
+        } else {
             ProxiedPlayer player = (ProxiedPlayer) commandSender;
-            if(args.length == 0) {
+            if (args.length == 0) {
                 player.sendMessage(new TextComponent("§cUsage: /ndiscord reload"));
-            }else {
-                if(args[0].equalsIgnoreCase("reload")) {
-                    if(!(player.hasPermission("ndiscord.reload"))) {
+            } else {
+                if (args[0].equalsIgnoreCase("reload")) {
+                    if (!(player.hasPermission("ndiscord.reload"))) {
                         player.sendMessage(new TextComponent("§cYou don't have permission to do that!"));
                         return;
                     }
